@@ -1,3 +1,7 @@
+#include<iostream>
+using namespace std;
+
+
 void fib(int n){
     int t1=0;
     int t2=1;
