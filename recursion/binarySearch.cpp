@@ -25,11 +25,11 @@ bool binarySearch(int *arr, int s, int e, int key){
 }
 
 int main(){
-    int arr[5]={1,2,5,7,4};
+    int arr[5]={1,2,4,7,8};
     int size = 5;
     int s= 0;
     int e = size-1;
-    int key = 3;
+    int key = 4;
     bool ans = binarySearch(arr,s,e,key);
     cout<<"present or not "<<ans<<endl;
     print(arr,s,e);

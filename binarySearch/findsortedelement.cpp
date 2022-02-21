@@ -46,7 +46,7 @@ int lastOccur(int even[], int n, int key){
 }
 
 int main(){
-    int even[8]={1,2,6,5,2,7,6,2};
+    int even[8]={1,2,2,2,2,5,8,7};
     cout<<"The first occurence is "<< firstOccur(even,8,2)<<endl;
     cout<<"The Last occurence is "<< lastOccur(even,8,2)<<endl;
 
