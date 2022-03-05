@@ -35,9 +35,6 @@ void spiralPrint(int a[][1000], int m, int n ){
         }
 
     }
-    
-
-
 }
 int main(){
 
