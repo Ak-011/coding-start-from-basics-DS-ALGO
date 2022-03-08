@@ -20,14 +20,18 @@ class Hero{
 
 
 
-    // Hero(Hero& temp){
-    //     cout<<"Copy Contructor called"<<endl;
-    //     this->health = temp.health;
-    //     this->level = temp.level;
-    // } 
+    Hero(Hero& temp){ 
+        
+        char *ch = new char[strlen(temp.name)+1];
+        strcpy(ch, temp.name);
+        this->name = ch;
+        // cout<<"Copy Contructor called"<<endl;
+        this->health = temp.health;
+        this->level = temp.level;
+     } 
 
 
-    
+
 //paramaterized constructor
 //"this"= it is a pointer who store the location of curent object eg Hero ramesh 
 // then the ramesh address will be stored in the this pointer 
@@ -75,21 +79,49 @@ class Hero{
        strcpy(this->name, name);
    }
 
+   ~Hero(){
+       cout<<"Distructor is called: "<< endl;
+   }
+
+
 };
 
 int main(){
+    Hero a;
+    
+    Hero *b = new Hero;
+    delete b;
 
-    Hero h1;
-    h1.setHealth(33);
-    h1.setLevel('A');
-    char name[7] = "Ashish";
-    h1.setName(name);
-    h1.print();
-
-//use default copy const 
     return 0;
-
 }
+
+// int main(){
+
+//     Hero h1;
+//     h1.setHealth(33);
+//     h1.setLevel('A');
+//     char name[7] = "Ashish";
+//     h1.setName(name);
+//    // h1.print();
+
+// //use default copy const 
+
+// //how to call copy constructor
+//    Hero  h2(h1);
+//   // h2.print();
+
+//     h1.name[0] = 'G';
+//    h1.print();
+//    h2.print();
+//   // Hero h2 = h1;
+
+//     h1 = h2;
+//     h1.print();
+
+
+//     return 0;
+
+// }
 /*int main(){
     Hero h1;
     cout<<"size: "<<sizeof(h1)<<endl;
@@ -105,8 +137,14 @@ Public data members can be accessed anywhere in the code
 
 GETTER/ SETTER 
 
-/SHALLOW AND DEEP COPY
+/SHALLOW AND DEEP COPY important
 default copy constructor do the shallow copy
+
+in shallow copy same array is used while in the deep copy we 
+make the entirely new array  now the change in the first array 
+do not reflect in the other array 
+
+
 
 
 

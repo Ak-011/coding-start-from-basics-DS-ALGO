@@ -1,5 +1,5 @@
 #include<iostream>
-#include "intro.cpp"
+//#include "intro.cpp"
 using namespace std;
 
 int main(){

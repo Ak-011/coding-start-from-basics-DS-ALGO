@@ -1,39 +1,53 @@
 #include<iostream>
+#include<string>
 //#include "intro.cpp"
 using namespace std;
 
 int main(){
 
-    //Static memory allocation
-    Hero a;
-    a.setHealth(80);
-    a.setLevel('A');
+       //statically created
+    
+        Hero a;
 
-    cout<<"Level is: "<<a.level<<endl;
-    cout<<"Health is: "<<a.getHealth()<<endl;
+        //dynamically 
+        Hero *b = new Hero(); 
+        delete b;
 
-    //Dynamic memory allocation
-    Hero *b = new Hero;
-    b->setHealth(95);
-    b->setLevel('C');
 
-    cout<<"Level is = "<<(*b).getLevel()<<endl;
-    cout<<"Health is = "<<(*b).getHealth()<<endl;
 
-    cout<<"Level is = "<<b->getLevel()<<endl;
-    cout<<"Health is= "<<b->getHealth()<<endl;
-       /* Hero ramesh;
 
-    cout<<"Size of Ramesh: "<<sizeof(ramesh)<<endl;
 
-    cout<<" Ramesh health is: "<< ramesh.getHealth()<<endl;
-    ramesh.setHealth(70);
-  //  ramesh.health=70;
-    ramesh.setLevel('A');
-  //  cout<<"size : "<<sizeof(h1)<<endl;
-    cout<<"Health is : "<<ramesh.getHealth()<<endl;
-    cout<<"Level is: "<<ramesh.getLevel()<<endl;
-*/
+
+    // //Static memory allocation
+    // Hero a;
+    // a.setHealth(80);
+    // a.setLevel('A');
+
+    // cout<<"Level is: "<<a.level<<endl;
+    // cout<<"Health is: "<<a.getHealth()<<endl;
+
+    // //Dynamic memory allocation
+    // Hero *b = new Hero;
+    // b->setHealth(95);
+    // b->setLevel('C');
+
+    // cout<<"Level is = "<<(*b).getLevel()<<endl;
+    // cout<<"Health is = "<<(*b).getHealth()<<endl;
+
+    // cout<<"Level is = "<<b->getLevel()<<endl;
+    // cout<<"Health is= "<<b->getHealth()<<endl;
+    //    /* Hero ramesh;
+
+//     cout<<"Size of Ramesh: "<<sizeof(ramesh)<<endl;
+
+//     cout<<" Ramesh health is: "<< ramesh.getHealth()<<endl;
+//     ramesh.setHealth(70);
+//   //  ramesh.health=70;
+//     ramesh.setLevel('A');
+//   //  cout<<"size : "<<sizeof(h1)<<endl;
+//     cout<<"Health is : "<<ramesh.getHealth()<<endl;
+//     cout<<"Level is: "<<ramesh.getLevel()<<endl;
+
     return 0;
 }
 /*
@@ -73,6 +87,18 @@ no input parameter
 
 1. Paramaterized constructor = ?
 2.copy constructor
+3. Shallow and Deep copy
+4.copy assignment operator
+
+[[[[DESTRUCTOR]]]]
+
+to de-allocate the memory deconst is called;
+what is difference between construc and de-contruc is only symbol thats it
+
+every object that has been created statically discructor will call 
+automatically while in case of dynamically  we have to call 
+manually destructor
+
 
 
 */
