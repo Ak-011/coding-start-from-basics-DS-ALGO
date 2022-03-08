@@ -1,17 +1,39 @@
 #include<iostream>
-#include "intro.cpp"
+//#include "intro.cpp"
 using namespace std;
 
 int main(){
 
-    Hero ramesh;
+    //Static memory allocation
+    Hero a;
+    a.setHealth(80);
+    a.setLevel('A');
 
-    ramesh.health=70;
-    ramesh.level='A';
+    cout<<"Level is: "<<a.level<<endl;
+    cout<<"Health is: "<<a.getHealth()<<endl;
+
+    //Dynamic memory allocation
+    Hero *b = new Hero;
+    b->setHealth(95);
+    b->setLevel('C');
+
+    cout<<"Level is = "<<(*b).getLevel()<<endl;
+    cout<<"Health is = "<<(*b).getHealth()<<endl;
+
+    cout<<"Level is = "<<b->getLevel()<<endl;
+    cout<<"Health is= "<<b->getHealth()<<endl;
+       /* Hero ramesh;
+
+    cout<<"Size of Ramesh: "<<sizeof(ramesh)<<endl;
+
+    cout<<" Ramesh health is: "<< ramesh.getHealth()<<endl;
+    ramesh.setHealth(70);
+  //  ramesh.health=70;
+    ramesh.setLevel('A');
   //  cout<<"size : "<<sizeof(h1)<<endl;
-    cout<<"Health is : "<<ramesh.health<<endl;
-    cout<<"Level is: "<<ramesh.level<<endl;
-
+    cout<<"Health is : "<<ramesh.getHealth()<<endl;
+    cout<<"Level is: "<<ramesh.getLevel()<<endl;
+*/
     return 0;
 }
 /*
@@ -31,6 +53,26 @@ Private data members can only be used inside the class
 
 Protected
 
+
+STRUCTURE PADDING IS IMPORTANT PLEASE REVISE
+
+{{{{{{{{{{{{{{{{{{{{{{{{{{}}}}}}}}}}}}}}}}}}}}}}}}}}
+
+[CONSTRUCTOR]
+
+
+invoke during object creation 
+no return type
+no input parameter
+  
+
+  when we write 
+  Hero ramesh : what does that means it means ramesh.Hero() but the point 
+  is that there is no Hero() function is present
+
+
+1. Paramaterized constructor = ?
+2.copy constructor
 
 
 */
