@@ -11,6 +11,7 @@ class Hero{
   public:
         char *name;
          char level;
+         static int timeToComplete;
 
     Hero(){
         cout<<"Default constructor called:  "<<endl;
@@ -79,6 +80,11 @@ class Hero{
        strcpy(this->name, name);
    }
 
+    static int random(){
+        return timeToComplete ;
+    }
+
+
    ~Hero(){
        cout<<"Distructor is called: "<< endl;
    }
@@ -86,13 +92,28 @@ class Hero{
 
 };
 
-int main(){
-    Hero a;
-    
-    Hero *b = new Hero;
-    delete b;
+int Hero:: timeToComplete = 5;
 
-    return 0;
+int main(){
+    
+    
+    cout<<Hero::timeToComplete<<endl;
+    cout<<Hero::random()<<endl;
+    
+    Hero a;
+    cout<<a.timeToComplete<<endl;
+
+    Hero b;
+     b.timeToComplete = 13;
+     cout<<a.timeToComplete<<endl;
+     cout<<b.timeToComplete<<endl;
+
+    //Hero a;
+    
+    // Hero *b = new Hero;
+    // delete b;
+
+    // return 0;
 }
 
 // int main(){
@@ -145,7 +166,39 @@ make the entirely new array  now the change in the first array
 do not reflect in the other array 
 
 
+STATIC KEYWORD
+
+IT CREATE AN data membes which belongs to class =important
+
+[datatype class name :: field name = value;]
+
+STATIC FUNCTION
+no necessart to create the object  to call 
+static function can only access to static members =[very imp]
 
 
+WHAT WE HAVE LEARNED TILL NOW 
+
+1.CLASS 
+2. OBJECT 
+        DATA MEMBERS
+        BEHAVIOUR / FUNCTION
+3. ACCESS MODIFIER 
+        PUBLIC
+        PRIVATE
+4. STATIC/ DYNAMIC ALLOCATION 
+5. CONSTRUCTOR
+        SIMPLE
+        DEFAULT
+        PARAMETERIZED
+        COPY CONSTRUCTOR
+6. COPY ASSIGNMENT OPERATOR
+7. DESTRUCTOR
+        STATIC 
+        DYNAMIC
+8. PADDING AND GREEDY ALIGNMENT
+9. DEEP/SHALLOW COPY 
+10 . CONST KEYWORD - FUNCTIONS ,  INITILIZAION KEYWORDS
+11. STATIC DATA MEMBERS / FUNCTIONS
 
 */
