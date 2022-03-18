@@ -10,3 +10,5 @@ insertion and deletion is easy in linklist
  3. Circularly link list 
 
  
+ 1. singly link list 
+ 
