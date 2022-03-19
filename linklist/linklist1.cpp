@@ -79,13 +79,13 @@ void print(Node* &head){
         cout<<endl;
 }
 
-void deleteNode(int position, Node* &head){
+void deleteNode(int position, Node* &head , Node* &tail){
     //deleting first or start node
      if(position == 1){
          Node* temp = head;
-         cout<<head<<endl;
         head  = head ->next;
         //memory free start node
+        temp ->next = NULL;
         delete temp;
 
 
@@ -95,14 +95,22 @@ void deleteNode(int position, Node* &head){
            Node* prev = NULL;
 
            int cnt =1;
-           while(cnt <= position){ 
+           while(cnt < position){ 
                 prev = curr;
                 curr = curr->next;
                 cnt++;
            }
 
            prev->next = curr->next;
+           curr->next = NULL;
            delete curr;
+
+           if(prev->next == NULL){
+               tail = prev;
+           }
+
+      
+    
 
          // any node other then fisrt node
      }
@@ -136,7 +144,8 @@ int main(){
         cout<<"Head "<< head ->data<<endl;
         cout<<"Tail "<< tail ->data<<endl;
      
-        deleteNode(3 , head);
+        deleteNode(5 , head, tail);
+        print(head);
         
         cout<<"Head "<< head ->data<<endl;
         cout<<"Tail "<< tail ->data<<endl;
