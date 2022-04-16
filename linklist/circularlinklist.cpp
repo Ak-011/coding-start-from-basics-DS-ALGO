@@ -23,19 +23,19 @@ class Node{
 
 };
 
-void insertNode(Node* &tail, int element, int d){
+void insertNode(Node* &head, int element, int d){
     //assuming that the element is present in the list
 
-    if(tail == NULL){
+    if(head == NULL){
         Node* newNode = new Node(d);
-        tail = newNode;
+        head = newNode;
         newNode->next = newNode;
     }
     else{
         //non empty list
         // assuming element is present in the list
 
-        Node* curr = tail;
+        Node* curr = head;
         while(curr->data != element){
             curr = curr->next;
         }
@@ -60,17 +60,17 @@ void print(Node* tail){
     cout<<endl;
 }
 
-void deleteNode(Node* &tail, int value ){
+/* void deleteNode(Node* &head, int value ){
     //empty list
-    if (tail  == NULL)
+    if (head  == NULL)
     {
-        cout<<"the list is empty";
+       // cout<<"the list is empty";
         return;
     }
     else{
         //non empty
         // assuming that value is present in the linked list 
-        Node* prev = tail;
+        Node* prev = head;
         Node* curr = prev->next;
         while(curr->data != value){
             prev = curr;
@@ -81,12 +81,12 @@ void deleteNode(Node* &tail, int value ){
 
         //one node link list
         if(curr==prev){
-            tail =NULL;
+            head =NULL;
         }
         //if more than 2 node is present
-        if(tail==curr){
-            tail = prev;
-        }
+        // if(tail==curr){
+        //     tail = prev;
+        // }
         curr->next = NULL;
         delete curr;
 
@@ -94,30 +94,88 @@ void deleteNode(Node* &tail, int value ){
     
 
 }
+*/
+
+Node* deleteNode(Node* head, int key) 
+{	
+    if(head == NULL){
+        
+    }
+    if(head->data == key && head->next == head){
+        delete head;
+        
+    }
+    Node* last = head;
+    Node* d = NULL;
+    if(head->data == key){
+        while(last != head){
+            last = last->next;
+        }
+        last ->next = head->next;
+        delete head;
+        head = last ->next;
+        
+       }
+    	while(last->next != head && last->next->data != key){
+            last = last ->next;
+        }
+    	
+    	if(last->next->data == key){
+            d = last->next;
+            last->next = d->next;
+            delete d;
+        }
+ 
+   
+}
+/*
+Node* deleteNode(Node* tail, int key) 
+{	 if (tail  == NULL)
+    {
+       delete tail;
+    }
+ if(tail->next == tail && tail->data == key){
+     delete tail;
+ }
+    
+       
+        Node* curr = tail->next;
+        while(curr != tail){
+            tail = tail->next;
+            curr = curr->next;
+            if(curr->data == key ){
+                break;
+            }
+            
+        }
+ 		tail->next = curr->next;
+        curr->next = NULL;
+ 		delete curr;
+}*/
 
 int main(){
 
-    Node* tail = NULL;
+    Node* head = NULL;
 
-    insertNode(tail, 5, 3);    
-    print(tail);
+    insertNode(head, 5, 3);    
+    print(head);
     
-    insertNode(tail, 3, 5 );    
-    print(tail);
-    // insertNode(tail, 5, 7 );    
-    // print(tail);
-    // insertNode(tail, 7, 9 );    
-    // print(tail);
-    // insertNode(tail, 5, 6 );    
-    // print(tail);
-    // insertNode(tail, 9, 10 );    
-    // print(tail);
-    // insertNode(tail, 3, 1 );    
-    // print(tail);
+    insertNode(head, 3, 5 );    
+    print(head);
+    insertNode(head, 5, 7 );    
+    print(head);
+    insertNode(head, 7, 9 );    
+    print(head);
+    insertNode(head, 5, 6 );    
+    print(head);
+    insertNode(head, 9, 10 );    
+    print(head);
+    insertNode(head, 3, 1 );    
+    print(head);
 
 
-    deleteNode(tail , 5);
-    print(tail);
+    deleteNode(head , 10 );
+    print(head);
 
 
 

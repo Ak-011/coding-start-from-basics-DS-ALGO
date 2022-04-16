@@ -1,14 +1,11 @@
- 
-    // insertNode(tail, 3, 5 );    
-    // print(tail);
-    // insertNode(tail, 5, 7 );    
-    // print(tail);
-    // insertNode(tail, 7, 9 );    
-    // print(tail);
-    // insertNode(tail, 5, 6 );    
-    // print(tail);
-    // insertNode(tail, 9, 10 );    
-    // print(tail);
-    // insertNode(tail, 3, 1 );    
-    // print(tail);
+        // Node* tail = node1;
+        // print(head);
+        // insertAtTail(tail , 12);
+        // print(head);
+        // insertAtTail(tail , 15);
+        // print(head);
 
+        // insertAtPosition(tail ,head , 4, 17);
+        // print(head);
+        // insertAtPosition(tail , head , 5, 22);
+        // print(head);
