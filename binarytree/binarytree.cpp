@@ -31,8 +31,10 @@ node* binaryTree(node* root){
 }
 void levelOrderTraversal(node* root){
     queue<node*> q;
+    int cnt = 1;
     q.push(root);
     q.push(NULL);
+
 
     while(!q.empty()){
         node* temp = q.front();
@@ -41,6 +43,7 @@ void levelOrderTraversal(node* root){
             cout<<endl;
             if(!q.empty()){
                 q.push(NULL);
+                cnt++;
             }
         }
         else{
@@ -54,8 +57,10 @@ void levelOrderTraversal(node* root){
             q.push(temp->right);
         }
         }
+        
 
     }
+    cout<<cnt<<endl;
 }
 
 void inOrder(node* root){
@@ -96,12 +101,12 @@ int main() {
     node* root = NULL;
     root = binaryTree(root);
 
-    // 1 3  7 -1 -1 11 -1 -1 5 17 -1 -1 18 -1 -1
-    // levelOrderTraversal(root);
-    inOrder(root);
+    // 1 3  7 -1 -1 11 -1 -1 5 17 -1 -1 18 19 -1 -1 -1
+    levelOrderTraversal(root);
+    // inOrder(root);
     cout<<endl;
-    rightView(root);
-    cout<<endl;
+    // rightView(root);
+    // cout<<endl;
     // postOrder(root);
     return 0;
     
